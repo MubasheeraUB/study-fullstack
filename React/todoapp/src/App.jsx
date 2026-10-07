@@ -3,7 +3,7 @@ import TodoApp from "./component/TodoApp";
 
 export class App extends Component {
   render() {
-    return <div>
+    return <div> 
       <TodoApp />
     </div>;
   }
