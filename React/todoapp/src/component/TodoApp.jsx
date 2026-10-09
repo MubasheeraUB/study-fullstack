@@ -18,13 +18,27 @@ export default class TodoApp extends Component {
     const { input } = this.state;
 
     this.setState({
-      items: [...this.state.items, input]
+      items: [...this.state.items, input],
+      input: ""
     }) ;
   }
 
+  deleteItem = (key) => {
+    this.setState({
+      items : this.state.items.filter((data, index) => index !== key)
+    });
+  };
+
+  editItem = (key) => {
+    this.setState({
+      items : this.state.items.filter((data, index) => index === key)
+    });
+    console.log(this.state.items);
+  };
+
   render() {
     const { input, items } = this.state;
-    console.log(items);
+    
     return (
       <div className="todo-container">
         <form className="input-section" onSubmit = {this.storeItems} >
@@ -36,7 +50,8 @@ export default class TodoApp extends Component {
           {items.map((data, index) => (
             <li key={index}>
               {data}
-              <i className="fa-solid fa-trash-alt"></i>
+              <i className="fa-solid fa-pencil" onClick={() => this.editItem(index)}></i>
+              <i className="fa-solid fa-trash-alt" onClick={() => this.deleteItem(index)}></i>
             </li>
           ))}
         </ul>
