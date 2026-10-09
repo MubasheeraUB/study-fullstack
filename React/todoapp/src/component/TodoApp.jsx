@@ -11,8 +11,15 @@ export default class TodoApp extends Component {
         </form>
 
         <ul>
-          <li>Items</li>
-          <li>Items1</li>
+          <li>
+            Items <i className="fas fa-trash-alt"></i>
+          </li>
+          <li>
+            Items <i className="fas fa-trash-alt"></i>
+          </li>
+          <li>
+            Items <i className="fas fa-trash-alt"></i>
+          </li>
         </ul>
       </div>
     );
