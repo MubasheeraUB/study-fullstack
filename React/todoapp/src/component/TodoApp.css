@@ -26,6 +26,7 @@ body {
     border: 1px solid #106879;
     width: 100%;
     padding: 10px;
+    color: #08869e;
     box-sizing: border-box;
     background-color: #055565;
 }
@@ -40,6 +41,7 @@ ul{
 }
 
 ul li{
+    display: flex;
     list-style: none;
     /* background-color: #fff; */
     padding: 15px;
@@ -48,6 +50,12 @@ ul li{
     color: #08869e;
     box-shadow: 0 4px 6px #00000066;
     background-color: #055565;
+    align-items: center;
+}
+
+ul li i {
+  margin-left: auto;
+  cursor: pointer;
 }
 
 h2 {
