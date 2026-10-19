@@ -1,22 +1,35 @@
-const user = {
-  name: 'Hedy Lamarr',
-  imageUrl: 'https://react.dev/images/docs/scientists/yXOvdOSs.jpg',
-  imageSize: 90,
-};
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from "react";
 
-export default function Profile() {
+import ProductList from "./components/ProductList";
+import StringConCat from "./components/StringConCat";
+
+function Home() {
+  const [count, setCount] = useState(0);
+
+  function handleClick() {
+    setCount(count + 1);
+  }
   return (
     <>
-      <h1>{user.name}</h1>
-      <img
-        className="avatar"
-        src={user.imageUrl}
-        alt={'Photo of ' + user.name}
-        style={{
-          width: user.imageSize,
-          height: user.imageSize
-        }}
-      />
+      <h1>Welcome to my app</h1>
+      <button onClick={handleClick}>Clicked {count} times</button>
     </>
+  );
+}
+
+export default function MyApp() {
+  return (
+    <BrowserRouter>
+      <div>
+        <br />
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/image" element={<StringConCat />} />
+          <Route path="/products" element={<ProductList />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
