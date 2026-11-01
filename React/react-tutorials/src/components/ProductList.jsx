@@ -20,7 +20,7 @@ class ProductList extends Component {
     ));
     return (
       <>
-        <h1>Products</h1>
+        <h1 style={{color : "#1753ca"}}>Products</h1>
         <ul>{listItems}</ul>
       </>
     );
